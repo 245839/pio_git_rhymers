@@ -1,0 +1,4 @@
+#Ignorowanie katalogow: .idea, bin i target
+.idea/
+bin/
+target/
