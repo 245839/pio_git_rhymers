@@ -12,6 +12,7 @@ class RhymersDemo {
 
     }
 
+    // TODO: dalsza rozbudowa dla czytelniejszej prezentacji - wstawienie prostych komunikatów dla użytkownika
     private static void testRhymers(Rhymersfactory factory) {
         DefaultCountingOutRhymer[] rhymers = {factory.getStandardRhymer(), factory.getFalseRhymer(),
                 factory.getFIFORhymer(), factory.getHanoiRhymer()};
@@ -20,6 +21,7 @@ class RhymersDemo {
             for (int j = 0; j < 3; j++)
                 rhymers[j].countIn(i);
 
+        // TODO: zastosowanie dla wszystkich (3) indeksów rhymers - poprawa z '3' na dodatkowy iterator 'j = 1:3'
         java.util.Random rn = new java.util.Random();
         for (int i = 1; i < 15; i++)
             rhymers[3].countIn(rn.nextInt(20));
@@ -30,6 +32,7 @@ class RhymersDemo {
             System.out.println();
         }
 
+        // TODO: zastosowanie dla wszystkich (3) indeksów rhymers - poprawa z '3' na dodatkowy iterator 'j = 1:3'
         System.out.println("total rejected is "
                 + ((HanoiRhymer) rhymers[3]).reportRejected());
     }
