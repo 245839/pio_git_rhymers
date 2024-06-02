@@ -56,4 +56,9 @@ public class IntLinkedList {
         return ret;
     }
 
+    //    Dodatkowa metoda do dodawania elementów
+    public void push(int value) {
+        if (isEmpty()) last = new Node(value);
+        else last.setPrev(new Node(value));
+    }
 }

@@ -1,6 +1,8 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.list.IntLinkedList;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 //Wszystkie testy poniżej przeszły pomyślnie
@@ -76,4 +78,61 @@ public class RhymersJUnitTest {
         Assert.assertEquals(EMPTY_STACK_VALUE, result);
     }
 
+    private IntLinkedList list;
+
+    @Before
+    public void setUp() {
+        list = new IntLinkedList();
+    }
+
+    @Test
+    public void testIsEmptyInitially() {
+        Assert.assertTrue(list.isEmpty());
+    }
+
+    @Test
+    public void testIsEmptyAfterAddingNodes() {
+        list.push(1);
+        Assert.assertFalse(list.isEmpty());
+    }
+
+    @Test
+    public void testIsEmptyAfterPoppingAllNodes() {
+        list.push(1);
+        list.pop();
+        Assert.assertTrue(list.isEmpty());
+    }
+
+    @Test
+    public void testTopWhenEmpty() {
+        Assert.assertEquals(-1, list.top());
+    }
+
+    @Test
+    public void testTopAfterPoppingNodes() {
+        list.push(1);
+        list.push(2);
+        list.pop();
+        Assert.assertEquals(2, list.top());
+    }
+
+    @Test
+    public void testPopWhenEmpty() {
+        Assert.assertEquals(-1, list.pop());
+    }
+
+    @Test
+    public void testPopAfterAddingNodes() {
+        list.push(1);
+        Assert.assertEquals(1, list.pop());
+    }
+
+    @Test
+    public void testPopAfterPoppingAllNodes() {
+        list.push(1);
+        list.push(2);
+        list.pop();
+        list.pop();
+        Assert.assertEquals(-1, list.pop());
+    }
 }
